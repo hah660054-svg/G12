@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 12 Study App - Team Corntrol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', 'Myanmar Text', sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- Splash Screen Styles --- */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .logo-container {
+            text-align: center;
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        .logo-title {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .logo-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Loading Bar */
+        .loader-container {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-top: 40px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            border-radius: 4px;
+            animation: loadProgress 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+
+        /* --- Dashboard Styles --- */
+        #dashboard {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dashboard-header {
+            margin-bottom: 35px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 24px;
+            color: #f8fafc;
+            margin-bottom: 8px;
+        }
+
+        .dashboard-header p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Subject Cards */
+        .subject-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .subject-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-3px);
+            border-color: #38bdf8;
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15);
+        }
+
+        .subject-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .subject-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        /* Subject Colors */
+        .myan-icon { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+        .eng-icon { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+        .math-icon { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+        .subject-text h3 {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .subject-text span {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .arrow-icon {
+            color: #64748b;
+            transition: transform 0.3s ease;
+        }
+
+        .subject-card:hover .arrow-icon {
+            transform: translateX(4px);
+            color: #38bdf8;
+        }
+
+        /* Animations */
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(0.98); opacity: 0.8; }
+            100% { transform: scale(1.02); opacity: 1; }
+        }
+
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Splash Screen with Team Corntrol Logo -->
+    <div id="splash-screen">
+        <div class="logo-container">
+            <div class="logo-title">TEAM CORNTROL</div>
+            <div class="logo-subtitle">Grade 12 Study Hub</div>
+            <div class="loader-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard">
+        <div class="dashboard-header">
+            <h1>ဂုဏ်ထူးထွက်ဖို့ လေ့ကျင့်ကြစို့</h1>
+            <p>လေ့လာလိုသော ဘာသာရပ်ကို ရွေးချယ်ပါ</p>
+        </div>
+
+        <div class="subject-grid">
+            <!-- မြန်မာစာ ဖိုင်ချိတ်ဆက်ရန် -->
+            <a href="myan.html" class="subject-card">
+                <div class="subject-info">
+                    <div class="subject-icon myan-icon">📖</div>
+                    <div class="subject-text">
+                        <h3>မြန်မာစာ</h3>
+                        <span>ဘာသာရပ်ဆိုင်ရာ လေ့ကျင့်ခန်းများ</span>
+                    </div>
+                </div>
+                <div class="arrow-icon">➔</div>
+            </a>
+
+            <!-- အင်္ဂလိပ်စာ ဖိုင်ချိတ်ဆက်ရန် -->
+            <a href="eng.html" class="subject-card">
+                <div class="subject-info">
+                    <div class="subject-icon eng-icon">🔤</div>
+                    <div class="subject-text">
+                        <h3>အင်္ဂလိပ်စာ</h3>
+                        <span>Grammar, Reading & Writing</span>
+                    </div>
+                </div>
+                <div class="arrow-icon">➔</div>
+            </a>
+
+            <!-- သင်္ချာ ဖိုင်ချိတ်ဆက်ရန် -->
+            <a href="math.html" class="subject-card">
+                <div class="subject-info">
+                    <div class="subject-icon math-icon">📐</div>
+                    <div class="subject-text">
+                        <h3>သင်္ချာ</h3>
+                        <span>Formula & Problem Solving</span>
+                    </div>
+                </div>
+                <div class="arrow-icon">➔</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Splash screen ဝင်ချိန် (2.8 စက္ကန့်) ပြီးရင် Dashboard ကို ပုံဖော်ပေးမယ့် Script
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                const dashboard = document.getElementById('dashboard');
+
+                splash.classList.add('fade-out');
+                dashboard.classList.add('fade-in');
+            }, 2700);
+        });
+    </script>
+</body>
+</html>
