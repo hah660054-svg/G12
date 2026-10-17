@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 12 English - Team Corntrol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: #38bdf8;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            transform: translateX(-3px);
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+            color: #60a5fa;
+            margin-bottom: 6px;
+        }
+
+        .header-title p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* All Question Special Card */
+        .all-card {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .all-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+        }
+
+        .all-card .info h2 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .all-card .info p {
+            font-size: 12px;
+            color: #bfdbfe;
+        }
+
+        .all-card .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 20px;
+        }
+
+        /* Units Grid Layout (2 columns) */
+        .grid-title {
+            font-size: 15px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .unit-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 16px 14px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .unit-card:hover {
+            transform: translateY(-3px);
+            border-color: #60a5fa;
+            background: rgba(30, 41, 59, 0.95);
+            box-shadow: 0 4px 15px rgba(96, 165, 250, 0.2);
+        }
+
+        .unit-number {
+            font-size: 16px;
+            font-weight: bold;
+            color: #f8fafc;
+        }
+
+        .unit-sub {
+            font-size: 11px;
+            color: #64748b;
+        }
+
+        .arrow {
+            color: #475569;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .unit-card:hover .arrow {
+            color: #60a5fa;
+            transform: translateX(3px);
+        }
+
+        /* Footer Branding */
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #475569;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-bar">
+            <a href="index.html" class="back-btn">‹ ပင်မစာမျက်နှာ</a>
+        </div>
+
+        <div class="header-title">
+            <h1>Grade 12 English</h1>
+            <p>လေ့ကျင့်လိုသော Unit သို့မဟုတ် မေးခွန်းအစုံကို ရွေးချယ်ပါ</p>
+        </div>
+
+        <!-- မေးခွန်းအစုံ Card (all_answers.html သို့ ချိတ်ဆက်ထားသည်) -->
+        <a href="all_answers.html" class="all-card">
+            <div class="info">
+                <h2>မေးခွန်းအစုံ (All Units)</h2>
+                <p>Unit 1 မှ 12 အထိ မေးခွန်းနှင့် အဖြေများ</p>
+            </div>
+            <div class="badge">📝</div>
+        </a>
+
+        <div class="grid-title">Units အလိုက် လေ့ကျင့်ရန်</div>
+
+        <!-- Unit 1 မှ Unit 12 အထိ Grid 12 ကွက် -->
+        <div class="unit-grid">
+            <!-- Unit 1 -->
+            <a href="unit1.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 1</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 2 -->
+            <a href="unit2.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 2</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 3 -->
+            <a href="unit3.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 3</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 4 -->
+            <a href="unit4.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 4</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 5 -->
+            <a href="unit5.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 5</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 6 -->
+            <a href="unit6.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 6</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 7 -->
+            <a href="unit7.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 7</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 8 -->
+            <a href="unit8.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 8</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 9 -->
+            <a href="unit9.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 9</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 10 -->
+            <a href="unit10.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 10</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 11 -->
+            <a href="unit11.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 11</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+
+            <!-- Unit 12 -->
+            <a href="unit12.html" class="unit-card">
+                <div>
+                    <div class="unit-number">Unit 12</div>
+                    <div class="unit-sub">Exercises</div>
+                </div>
+                <div class="arrow">➔</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            POWERED BY TEAM CORNTROL
+        </div>
+    </div>
+
+</body>
+</html>
