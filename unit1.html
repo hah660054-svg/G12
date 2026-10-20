@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 - Team Corntrol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: #38bdf8;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            transform: translateX(-3px);
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+            color: #60a5fa;
+            margin-bottom: 6px;
+        }
+
+        .header-title p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* Menu Options Card */
+        .option-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .option-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .option-card:hover {
+            transform: translateY(-3px);
+            border-color: #38bdf8;
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15);
+        }
+
+        .option-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .option-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 22px;
+            justify-content: center;
+        }
+
+        .fill-icon { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+        .passage-icon { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+        .option-text h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .option-text p {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .arrow-icon {
+            color: #64748b;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .option-card:hover .arrow-icon {
+            transform: translateX(4px);
+            color: #38bdf8;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #475569;
+            margin-top: auto;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-bar">
+            <a href="eng.html" class="back-btn">‹ Back to Units</a>
+        </div>
+
+        <div class="header-title">
+            <h1>Unit 1 Exercises</h1>
+            <p>လေ့ကျင့်လိုသော အမျိုးအစားကို ရွေးချယ်ပါ</p>
+        </div>
+
+        <!-- Options List -->
+        <div class="option-grid">
+            <!-- ၁။ ကွက်လပ်ဖြည့် (unit1_fill.html သို့ ချိတ်ထားသည်) -->
+            <a href="unit1_fill.html" class="option-card">
+                <div class="option-info">
+                    <div class="option-icon fill-icon">✏️</div>
+                    <div class="option-text">
+                        <h3>Fill in the blanks</h3>
+                        <p>ကွက်လပ်ဖြည့် လေ့ကျင့်ခန်းများ</p>
+                    </div>
+                </div>
+                <div class="arrow-icon">➔</div>
+            </a>
+
+            <!-- ၂။ စာပိုဒ်ဖတ်ပြီး ကွက်လပ်ဖြည့် (unit1_passage.html သို့ ချိတ်ထားသည်) -->
+            <a href="unit1_passage.html" class="option-card">
+                <div class="option-info">
+                    <div class="option-icon passage-icon">📖</div>
+                    <div class="option-text">
+                        <h3>Read the passage</h3>
+                        <p>စာပိုဒ်ဖတ်ပြီး ကွက်လပ်ဖြည့်ခြင်း</p>
+                    </div>
+                </div>
+                <div class="arrow-icon">➔</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            POWERED BY TEAM CORNTROL
+        </div>
+    </div>
+
+</body>
+</html>
