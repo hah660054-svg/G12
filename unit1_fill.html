@@ -237,13 +237,11 @@
 <body>
 
 <div class="container">
-    <!-- Top Bar matching Image 1 -->
     <div class="top-bar">
         <a href="unit1.html" class="close-btn">&lsaquo; Close</a>
         <div class="progress-indicator"><span id="currentQNum">1</span> / 73</div>
     </div>
 
-    <!-- Quiz Card Area -->
     <div id="quizBox">
         <div class="question-card" id="questionContainer">
             <!-- Question text -->
@@ -267,7 +265,6 @@
         <a href="unit1.html" class="exit-btn">ထွက်မည်</a>
     </div>
 
-    <!-- Result Screen -->
     <div id="resultBox" class="result-card hidden">
         <h2 style="color: #60a5fa; margin-bottom: 10px;">🎉 သင်တန်း ပြီးဆုံးပါပြီ! 🎉</h2>
         <div class="score-circle">
@@ -283,79 +280,79 @@
 
 <script>
     const questionsData = [
-        { id: 1, prefix: "(1) Not only officers but also the staff perform their assigned duties c", suffix: ".", answer: "scientifically" },
-        { id: 2, prefix: "(2) In our country, taking off s", suffix: " before entering a temple is not only a traditional practice but also a sign of respect.", answer: "shoes" },
-        { id: 3, prefix: "(3) Drinking water is v", suffix: " for staying hydrated.", answer: "vital" },
-        { id: 4, prefix: "(4) She conducted herself in a polite and respectful m", suffix: " during the entire meeting.", answer: "manner" },
-        { id: 5, prefix: "(5) It is not polite to i", suffix: " someone while they are speaking.", answer: "interrupt" },
-        { id: 6, prefix: "(6) Ancient Olympia was the b", suffix: " of the Olympic Games because the games were held there thousands of years ago.", answer: "birthplace" },
-        { id: 7, prefix: "(7) In some cultures, b", suffix: " after a meal is considered a compliment to the chef.", answer: "burping" },
-        { id: 8, prefix: "(8) After his death, his assets will be transferred to his c", suffix: " foundation.", answer: "charitable" },
-        { id: 9, prefix: "(9) Passing the e", suffix: " examination is a requirement for admission to the university.", answer: "entrance" },
-        { id: 10, prefix: "(10) Love and relationships will always be a topic of u", suffix: " interest.", answer: "universal" },
-        { id: 11, prefix: "(11) Good manners are essential in s", suffix: " dealings to maintain healthy relationships.", answer: "social" },
-        { id: 12, prefix: "(12) His comments were c", suffix: " and rude, making everyone uncomfortable at the meeting.", answer: "crude" },
-        { id: 13, prefix: "(13) C", suffix: " words are words, whose meanings are shaped by a particularly society and which do not have direct equivalent in other language.", answer: "Culture-bound" },
-        { id: 14, prefix: "(14) It is our responsibility to protect the environment for future g", suffix: ".", answer: "generations" },
-        { id: 15, prefix: "(15) The i", suffix: " diamonds looked almost identical to the original one, but they were slightly different in the fire, scintillation, and sparkle of the real gem.", answer: "imitation" },
-        { id: 16, prefix: "(16) In this region, the custom of having a feast after harvesting has been practiced for a very long time and it has become an i", suffix: " one.", answer: "ingrained" },
-        { id: 17, prefix: "(17) It is claimed that watching violence on TV makes some children more a", suffix: ".", answer: "aggressive" },
-        { id: 18, prefix: "(18) The kidneys serve a v", suffix: " function in eliminating waste from the blood.", answer: "vital" },
-        { id: 19, prefix: "(19) My brother is a", suffix: " new skills through online courses to advance his career.", answer: "acquiring" },
-        { id: 20, prefix: "(20) Could you p", suffix: " it on to Aung Aung when you've finished reading it.", answer: "pass" },
-        { id: 21, prefix: "(21) One of the t", suffix: " in Myanmar is to remove shoes when entering the house.", answer: "traditions" },
-        { id: 22, prefix: "(22) As the older sibling, you are r", suffix: " for looking out for your younger brother.", answer: "responsible" },
-        { id: 23, prefix: "(23) ABC Foundation is known for its c", suffix: " efforts because it enhances health and increases access to education and opportunities around the world.", answer: "charitable" },
-        { id: 24, prefix: "(24) You should always r", suffix: " the opinions of other people.", answer: "respect" },
-        { id: 25, prefix: "(25) After graduation, we are certain that the knowledge we have a", suffix: " will enable us to be successful in whatever field we may enter.", answer: "acquired" },
-        { id: 26, prefix: "(26) She is r", suffix: " for organizing the meeting for next week.", answer: "responsible" },
-        { id: 27, prefix: "(27) The teacher created a pleasant a", suffix: " in the classroom, which encouraged students to participate actively.", answer: "atmosphere" },
-        { id: 28, prefix: "(28) Parents should i", suffix: " good manners to their children from an early age.", answer: "instill" },
-        { id: 29, prefix: "(29) We have a family dinner for a next Sunday. Could you possibly d", suffix: " me a favour and kindly look after our kitchen while we are out?", answer: "do" },
-        { id: 30, prefix: "(30) To have a successful garden, you need to c", suffix: " the soil before planting seeds.", answer: "cultivate" },
-        { id: 31, prefix: "(31) Her positive a", suffix: " towards her business helped her become a senior executive.", answer: "attitude" },
-        { id: 32, prefix: "(32) Giving up your seat on the bus to an elderly person is a sign of good m", suffix: ".", answer: "manners" },
-        { id: 33, prefix: "(33) Regular exercise is v", suffix: " for your health and fitness.", answer: "vital" },
-        { id: 34, prefix: "(34) The car c", suffix: " reach its destination in two hours if there is not too much traffic.", answer: "can" },
-        { id: 35, prefix: "(35) All motorcyclists s", suffix: " wear helmets for their safety.", answer: "should" },
-        { id: 36, prefix: "(36) You m", suffix: " be honest if you want to build trust in friendship.", answer: "must" },
-        { id: 37, prefix: "(37) It c", suffix: " be expensive to keep a pet dog for companionship and love.", answer: "can" },
-        { id: 38, prefix: "(38) They s", suffix: " have so many children if they are not able to support them.", answer: "shouldn't" },
-        { id: 39, prefix: "(39) You're carrying too much, I", suffix: " open the door for you.", answer: "'ll" },
-        { id: 40, prefix: "(40) He is studying late because he m", suffix: " finish his project by tomorrow.", answer: "must" },
-        { id: 41, prefix: "(41) We s", suffix: " eat more vegetables for a balanced diet.", answer: "should" },
-        { id: 42, prefix: "(42) The flight w", suffix: " arrived at the airport by 6 p.m. tomorrow.", answer: "will have" },
-        { id: 43, prefix: "(43) According to the weather forecast, it m", suffix: " rain heavily tomorrow.", answer: "might" },
-        { id: 44, prefix: "(44) If you want to get a master's degree, you m", suffix: " study regularly.", answer: "must" },
-        { id: 45, prefix: "(45) You d", suffix: " go to the bank to do a transfer. You can simply do it online at any time that is convenient for you.", answer: "don't need to" },
-        { id: 46, prefix: "(46) I s", suffix: " have said that. I wasn't careful what I said to him and I hurt his feeling.", answer: "shouldn't" },
-        { id: 47, prefix: "(47) Some manners are u", suffix: "; for example, table manners are adopted in every country.", answer: "universal" },
-        { id: 48, prefix: "(48) Saying 'thank you' is a socially a", suffix: " manner in our culture.", answer: "acceptable" },
-        { id: 49, prefix: "(49) Parents and teachers play a v", suffix: " role in shaping their children's attitudes.", answer: "vital" },
-        { id: 50, prefix: "(50) To i", suffix: " knowledge to students is one of the chief duties of a teacher.", answer: "impart" },
-        { id: 51, prefix: "(51) R", suffix: " models may influence the lifestyles of teenagers: the way they dress and the way they behave.", answer: "Role" },
-        { id: 52, prefix: "(52) For some students, their teachers are r", suffix: " models for them to imitate.", answer: "role" },
-        { id: 53, prefix: "(53) Our company has b", suffix: " a reputation for quality and service.", answer: "built" },
-        { id: 54, prefix: "(54) My cousins are fond of swimming. They have a nice s", suffix: " pool in their backyard.", answer: "swimming" },
-        { id: 55, prefix: "(55) The Eiffel Tower in France is one of the w", suffix: " landmarks.", answer: "world-famous" },
-        { id: 56, prefix: "(56) A university student who has not received a bachelor's degree yet is called an u", suffix: ".", answer: "undergraduate" },
-        { id: 57, prefix: "(57) A teacher has a lot of influence on society, and so he or she is often regarded as the b", suffix: " of the society.", answer: "backbone" },
-        { id: 58, prefix: "(58) Canada and New Zealand are E", suffix: " countries where English is used as the first language.", answer: "English-speaking" },
-        { id: 59, prefix: "(59) As soon as she graduated from a university, she got a f", suffix: " job.", answer: "full-time" },
-        { id: 60, prefix: "(60) If you want to leave the hotel after 2 p.m., you must ask for a late c", suffix: ".", answer: "check-out" },
-        { id: 61, prefix: "(61) Cassette recorders are no longer used by most people because they are too o", suffix: ".", answer: "out-of-date" },
-        { id: 62, prefix: "(62) Although he is not w", suffix: ", he is kind-hearted and popular among his friends.", answer: "well-off" },
-        { id: 63, prefix: "(63) Many people in big cities prefer f", suffix: " foods to homemade foods.", answer: "fast" },
-        { id: 64, prefix: "(64) All applicants m", suffix: " take an entrance examination.", answer: "must" },
-        { id: 65, prefix: "(65) C", suffix: " you ride a motorcycle?", answer: "Can" },
-        { id: 66, prefix: "(66) You look pale and sick. You s", suffix: " go and see a doctor.", answer: "should" },
-        { id: 67, prefix: "(67) The elders of this generation s", suffix: " teach their children to be polite.", answer: "should" },
-        { id: 68, prefix: "(68) You m", suffix: " not smoke in public areas.", answer: "must" },
-        { id: 69, prefix: "(69) The police have done as much as they c", suffix: " to find the missing boy.", answer: "could" },
-        { id: 70, prefix: "(70) Students m", suffix: " not leave the examination hall without permission.", answer: "must" },
-        { id: 71, prefix: "(71) Although she is young, she c", suffix: " speak three languages.", answer: "can" },
-        { id: 72, prefix: "(72) All passengers m", suffix: " wear seat belts when they are in a car or plane.", answer: "must" },
-        { id: 73, prefix: "(73) If you are disturbed by this ringtone, you c", suffix: " change it.", answer: "can" }
+        { id: 1, prefix: "(1) Not only officers but also the staff perform their assigned duties c________", suffix: ".", answer: "conscientiously", fullWord: "conscientiously" },
+        { id: 2, prefix: "(2) In our country, taking off s________", suffix: " before entering a temple is not only a traditional practice but also a sign of respect.", answer: "shoes", fullWord: "shoes" },
+        { id: 3, prefix: "(3) Drinking water is v________", suffix: " for staying hydrated.", answer: "vital", fullWord: "vital" },
+        { id: 4, prefix: "(4) She conducted herself in a polite and respectful m________", suffix: " during the entire meeting.", answer: "manner", fullWord: "manner" },
+        { id: 5, prefix: "(5) It is not polite to i________", suffix: " someone while they are speaking.", answer: "interrupt", fullWord: "interrupt" },
+        { id: 6, prefix: "(6) Ancient Olympia was the b________", suffix: " of the Olympic Games because the games were held there thousands of years ago.", answer: "birthplace", fullWord: "birthplace" },
+        { id: 7, prefix: "(7) In some cultures, b________", suffix: " after a meal is considered a compliment to the chef.", answer: "burping", fullWord: "burping" },
+        { id: 8, prefix: "(8) After his death, his assets will be transferred to his c________", suffix: " foundation.", answer: "charitable", fullWord: "charitable" },
+        { id: 9, prefix: "(9) Passing the e________", suffix: " examination is a requirement for admission to the university.", answer: "entrance", fullWord: "entrance" },
+        { id: 10, prefix: "(10) Love and relationships will always be a topic of u________", suffix: " interest.", answer: "universal", fullWord: "universal" },
+        { id: 11, prefix: "(11) Good manners are essential in s________", suffix: " dealings to maintain healthy relationships.", answer: "social", fullWord: "social" },
+        { id: 12, prefix: "(12) His comments were c________", suffix: " and rude, making everyone uncomfortable at the meeting.", answer: "crude", fullWord: "crude" },
+        { id: 13, prefix: "(13) C________", suffix: " words are words, whose meanings are shaped by a particularly society and which do not have direct equivalent in other language.", answer: "Culture-bound", fullWord: "Culture-bound" },
+        { id: 14, prefix: "(14) It is our responsibility to protect the environment for future g________", suffix: ".", answer: "generations", fullWord: "generations" },
+        { id: 15, prefix: "(15) The i________", suffix: " diamonds looked almost identical to the original one, but they were slightly different in the fire, scintillation, and sparkle of the real gem.", answer: "imitation", fullWord: "imitation" },
+        { id: 16, prefix: "(16) In this region, the custom of having a feast after harvesting has been practiced for a very long time and it has become an i________", suffix: " one.", answer: "ingrained", fullWord: "ingrained" },
+        { id: 17, prefix: "(17) It is claimed that watching violence on TV makes some children more a________", suffix: ".", answer: "aggressive", fullWord: "aggressive" },
+        { id: 18, prefix: "(18) The kidneys serve a v________", suffix: " function in eliminating waste from the blood.", answer: "vital", fullWord: "vital" },
+        { id: 19, prefix: "(19) My brother is a________", suffix: " new skills through online courses to advance his career.", answer: "acquiring", fullWord: "acquiring" },
+        { id: 20, prefix: "(20) Could you p________", suffix: " it on to Aung Aung when you've finished reading it.", answer: "pass", fullWord: "pass" },
+        { id: 21, prefix: "(21) One of the t________", suffix: " in Myanmar is to remove shoes when entering the house.", answer: "traditions", fullWord: "traditions" },
+        { id: 22, prefix: "(22) As the older sibling, you are r________", suffix: " for looking out for your younger brother.", answer: "responsible", fullWord: "responsible" },
+        { id: 23, prefix: "(23) ABC Foundation is known for its c________", suffix: " efforts because it enhances health and increases access to education and opportunities around the world.", answer: "charitable", fullWord: "charitable" },
+        { id: 24, prefix: "(24) You should always r________", suffix: " the opinions of other people.", answer: "respect", fullWord: "respect" },
+        { id: 25, prefix: "(25) After graduation, we are certain that the knowledge we have a________", suffix: " will enable us to be successful in whatever field we may enter.", answer: "acquired", fullWord: "acquired" },
+        { id: 26, prefix: "(26) She is r________", suffix: " for organizing the meeting for next week.", answer: "responsible", fullWord: "responsible" },
+        { id: 27, prefix: "(27) The teacher created a pleasant a________", suffix: " in the classroom, which encouraged students to participate actively.", answer: "atmosphere", fullWord: "atmosphere" },
+        { id: 28, prefix: "(28) Parents should i________", suffix: " good manners to their children from an early age.", answer: "instill", fullWord: "instill" },
+        { id: 29, prefix: "(29) We have a family dinner for a next Sunday. Could you possibly d________", suffix: " me a favour and kindly look after our kitchen while we are out?", answer: "do", fullWord: "do" },
+        { id: 30, prefix: "(30) To have a successful garden, you need to c________", suffix: " the soil before planting seeds.", answer: "cultivate", fullWord: "cultivate" },
+        { id: 31, prefix: "(31) Her positive a________", suffix: " towards her business helped her become a senior executive.", answer: "attitude", fullWord: "attitude" },
+        { id: 32, prefix: "(32) Giving up your seat on the bus to an elderly person is a sign of good m________", suffix: ".", answer: "manners", fullWord: "manners" },
+        { id: 33, prefix: "(33) Regular exercise is v________", suffix: " for your health and fitness.", answer: "vital", fullWord: "vital" },
+        { id: 34, prefix: "(34) The car c________", suffix: " reach its destination in two hours if there is not too much traffic.", answer: "can", fullWord: "can" },
+        { id: 35, prefix: "(35) All motorcyclists s________", suffix: " wear helmets for their safety.", answer: "should", fullWord: "should" },
+        { id: 36, prefix: "(36) You m________", suffix: " be honest if you want to build trust in friendship.", answer: "must", fullWord: "must" },
+        { id: 37, prefix: "(37) It c________", suffix: " be expensive to keep a pet dog for companionship and love.", answer: "can", fullWord: "can" },
+        { id: 38, prefix: "(38) They s________", suffix: " have so many children if they are not able to support them.", answer: "shouldn't", fullWord: "shouldn't" },
+        { id: 39, prefix: "(39) You're carrying too much, I________", suffix: " open the door for you.", answer: "'ll", fullWord: "'ll" },
+        { id: 40, prefix: "(40) He is studying late because he m________", suffix: " finish his project by tomorrow.", answer: "must", fullWord: "must" },
+        { id: 41, prefix: "(41) We s________", suffix: " eat more vegetables for a balanced diet.", answer: "should", fullWord: "should" },
+        { id: 42, prefix: "(42) The flight w________", suffix: " arrived at the airport by 6 p.m. tomorrow.", answer: "will have", fullWord: "will have" },
+        { id: 43, prefix: "(43) According to the weather forecast, it m________", suffix: " rain heavily tomorrow.", answer: "might", fullWord: "might" },
+        { id: 44, prefix: "(44) If you want to get a master's degree, you m________", suffix: " study regularly.", answer: "must", fullWord: "must" },
+        { id: 45, prefix: "(45) You d________", suffix: " go to the bank to do a transfer. You can simply do it online at any time that is convenient for you.", answer: "don't need to", fullWord: "don't need to" },
+        { id: 46, prefix: "(46) I s________", suffix: " have said that. I wasn't careful what I said to him and I hurt his feeling.", answer: "shouldn't", fullWord: "shouldn't" },
+        { id: 47, prefix: "(47) Some manners are u________", suffix: "; for example, table manners are adopted in every country.", answer: "universal", fullWord: "universal" },
+        { id: 48, prefix: "(48) Saying 'thank you' is a socially a________", suffix: " manner in our culture.", answer: "acceptable", fullWord: "acceptable" },
+        { id: 49, prefix: "(49) Parents and teachers play a v________", suffix: " role in shaping their children's attitudes.", answer: "vital", fullWord: "vital" },
+        { id: 50, prefix: "(50) To i________", suffix: " knowledge to students is one of the chief duties of a teacher.", answer: "impart", fullWord: "impart" },
+        { id: 51, prefix: "(51) R________", suffix: " models may influence the lifestyles of teenagers: the way they dress and the way they behave.", answer: "Role", fullWord: "Role" },
+        { id: 52, prefix: "(52) For some students, their teachers are r________", suffix: " models for them to imitate.", answer: "role", fullWord: "role" },
+        { id: 53, prefix: "(53) Our company has b________", suffix: " a reputation for quality and service.", answer: "built", fullWord: "built" },
+        { id: 54, prefix: "(54) My cousins are fond of swimming. They have a nice s________", suffix: " pool in their backyard.", answer: "swimming", fullWord: "swimming" },
+        { id: 55, prefix: "(55) The Eiffel Tower in France is one of the w________", suffix: " landmarks.", answer: "world-famous", fullWord: "world-famous" },
+        { id: 56, prefix: "(56) A university student who has not received a bachelor's degree yet is called an u________", suffix: ".", answer: "undergraduate", fullWord: "undergraduate" },
+        { id: 57, prefix: "(57) A teacher has a lot of influence on society, and so he or she is often regarded as the b________", suffix: " of the society.", answer: "backbone", fullWord: "backbone" },
+        { id: 58, prefix: "(58) Canada and New Zealand are E________", suffix: " countries where English is used as the first language.", answer: "English-speaking", fullWord: "English-speaking" },
+        { id: 59, prefix: "(59) As soon as she graduated from a university, she got a f________", suffix: " job.", answer: "full-time", fullWord: "full-time" },
+        { id: 60, prefix: "(60) If you want to leave the hotel after 2 p.m., you must ask for a late c________", suffix: ".", answer: "check-out", fullWord: "check-out" },
+        { id: 61, prefix: "(61) Cassette recorders are no longer used by most people because they are too o________", suffix: ".", answer: "out-of-date", fullWord: "out-of-date" },
+        { id: 62, prefix: "(62) Although he is not w________", suffix: ", he is kind-hearted and popular among his friends.", answer: "well-off", fullWord: "well-off" },
+        { id: 63, prefix: "(63) Many people in big cities prefer f________", suffix: " foods to homemade foods.", answer: "fast", fullWord: "fast" },
+        { id: 64, prefix: "(64) All applicants m________", suffix: " take an entrance examination.", answer: "must", fullWord: "must" },
+        { id: 65, prefix: "(65) C________", suffix: " you ride a motorcycle?", answer: "Can", fullWord: "Can" },
+        { id: 66, prefix: "(66) You look pale and sick. You s________", suffix: " go and see a doctor.", answer: "should", fullWord: "should" },
+        { id: 67, prefix: "(67) The elders of this generation s________", suffix: " teach their children to be polite.", answer: "should", fullWord: "should" },
+        { id: 68, prefix: "(68) You m________", suffix: " not smoke in public areas.", answer: "must", fullWord: "must" },
+        { id: 69, prefix: "(69) The police have done as much as they c________", suffix: " to find the missing boy.", answer: "could", fullWord: "could" },
+        { id: 70, prefix: "(70) Students m________", suffix: " not leave the examination hall without permission.", answer: "must", fullWord: "must" },
+        { id: 71, prefix: "(71) Although she is young, she c________", suffix: " speak three languages.", answer: "can", fullWord: "can" },
+        { id: 72, prefix: "(72) All passengers m________", suffix: " wear seat belts when they are in a car or plane.", answer: "must", fullWord: "must" },
+        { id: 73, prefix: "(73) If you are disturbed by this ringtone, you c________", suffix: " change it.", answer: "can", fullWord: "can" }
     ];
 
     let currentIndex = 0;
@@ -394,7 +391,7 @@
         document.getElementById("currentQNum").innerText = currentIndex + 1;
 
         const container = document.getElementById("questionContainer");
-        container.innerHTML = `${q.prefix}_____ ${q.suffix}`;
+        container.innerHTML = `${q.prefix}${q.suffix}`;
 
         const input = document.getElementById("userInput");
         input.value = "";
@@ -433,14 +430,18 @@
         isChecked = true;
         const feedbackBox = document.getElementById("feedbackBox");
 
-        if (userAns === correctAns) {
+        // မေးခွန်းထဲက အစစာလုံးကို ပါပြီးသားလို့ တွက်ဆရင်ော အစအက္ခရာမပါဘဲ ရိုက်ရင်ပါ မှန်အောင် စစ်ပေးခြင်း
+        const firstLetter = currentQ.answer.charAt(0).toLowerCase();
+        const ansWithoutFirst = currentQ.answer.substring(1).toLowerCase();
+
+        if (userAns === correctAns || userAns === ansWithoutFirst) {
             correctCount++;
             feedbackBox.className = "feedback correct";
             feedbackBox.innerHTML = "✓ မှန်ကန်ပါသည်။ တော်ပါပေတယ်။";
         } else {
             wrongCount++;
             feedbackBox.className = "feedback wrong";
-            feedbackBox.innerHTML = `✗ မှားယွင်းပါသည်!<br>အဖြေမှန်: <span class="correct-answer-text">${currentQ.prefix}${currentQ.answer}${currentQ.suffix}</span>`;
+            feedbackBox.innerHTML = `✗ မှားယွင်းပါသည်!<br>အဖြေမှန်: <span class="correct-answer-text">${currentQ.fullWord}</span>`;
         }
 
         feedbackBox.style.display = "block";
